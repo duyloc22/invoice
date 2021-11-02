@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 export const Container = styled.div`
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 103px;

@@ -8,8 +8,6 @@ export const Container = styled.div`
     margin-bottom: 1em;
     padding: 1em;
     border-radius: 6px;
-    max-width: 730px;
-    width: 100%;
     height: 72px;
 
     &:nth-last-child(1) {

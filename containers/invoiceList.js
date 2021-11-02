@@ -7,20 +7,9 @@ function invoiceList() {
         style: "currency",
         currency: "GBP",
     });
-
-    return (
-        <>
-            <SideNav>
-                <SideNav.Square>
-                    <SideNav.Rect />
-                    <SideNav.Circle />
-                    <SideNav.Triangle />
-                </SideNav.Square>
-                <SideNav.AvatarWrap>
-                    <SideNav.Avatar src="/assets/image-avatar.jpg" alt="avatar" width={40} height={40} />
-                </SideNav.AvatarWrap>
-            </SideNav>
-            <div>
+    if (invoices)
+        return (
+            <>
                 {invoices.map((invoice) => {
                     return (
                         <InvoiceItem key={invoice.id}>
@@ -33,9 +22,8 @@ function invoiceList() {
                         </InvoiceItem>
                     );
                 })}
-            </div>
-        </>
-    );
+            </>
+        );
 }
 
 export default invoiceList;
