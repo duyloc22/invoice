@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Container = styled.div`
     background-color: #ffffff;
@@ -6,7 +7,7 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1em;
-    padding: 1em;
+    padding: 0 2em;
     border-radius: 6px;
     height: 72px;
 
@@ -43,6 +44,7 @@ export const Status = styled.p`
             ? "background-color: rgba(55, 59, 83, 0.1);color: rgba(55, 59, 83, 1)"
             : null};
 `;
+export const StyleArrow = styled(Image)``;
 export const SVGWrap = styled.div`
     position: fixed;
     top: 50%;

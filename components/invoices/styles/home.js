@@ -45,5 +45,4 @@ export const Plus = styled.span`
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    color: #7c5dfa;
 `;

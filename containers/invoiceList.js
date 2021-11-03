@@ -8,7 +8,6 @@ function invoiceList() {
         style: "currency",
         currency: "GBP",
     });
-    invoices = [];
     if (invoices.length == 0) {
         return (
             <InvoiceItem.SVGWrap>
@@ -30,7 +29,7 @@ function invoiceList() {
                         <InvoiceItem.Text>{invoice.clientName}</InvoiceItem.Text>
                         <InvoiceItem.Total>{currencyFormat.format(invoice.total)}</InvoiceItem.Total>
                         <InvoiceItem.Status status={invoice.status}>&#9679; {invoice.status}</InvoiceItem.Status>
-                        <InvoiceItem.Id>&gt;</InvoiceItem.Id>
+                        <Image src="/assets/icon-arrow-right.svg" alt="arrow-right" width={10} height={10} />
                     </InvoiceItem>
                 );
             })}

@@ -14,7 +14,10 @@ export default function Home() {
                 </div>
                 <div>
                     <Invoices.Button>
-                        <Invoices.Plus>+</Invoices.Plus> New Invoice
+                        <Invoices.Plus>
+                            <Image src="/assets/icon-plus.svg" alt="plus" width={10} height={10} />
+                        </Invoices.Plus>
+                        New Invoice
                     </Invoices.Button>
                 </div>
             </Invoices.Wrapper>
