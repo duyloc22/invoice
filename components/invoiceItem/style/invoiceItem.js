@@ -15,15 +15,15 @@ export const Container = styled.div`
     }
 `;
 export const Id = styled.h3`
+    color: #0c0e16;
     font-size: 12px;
 `;
 export const Text = styled.p`
     font-size: 12px;
     color: #858bb2;
 `;
-export const Total = styled.p`
-    color: #0c0e16;
-    font-weight: bold;
+export const Total = styled(Id)`
+    font-size: 16px;
 `;
 export const Status = styled.p`
     font-size: 12px;
@@ -42,4 +42,24 @@ export const Status = styled.p`
             : status == "draft"
             ? "background-color: rgba(55, 59, 83, 0.1);color: rgba(55, 59, 83, 1)"
             : null};
+`;
+export const SVGWrap = styled.div`
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 230px;
+    text-align: center;
+`;
+export const Title = styled(Id)`
+    font-size: 20px;
+    margin-top: 3em;
+`;
+export const SubTitle = styled(Text)``;
+
+export const SSpan = styled.span`
+    font-weight: bold;
 `;
