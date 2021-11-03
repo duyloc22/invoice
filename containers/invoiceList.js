@@ -1,9 +1,9 @@
 import React from "react";
-import invoices from "../data.json";
 import { InvoiceItem, SideNav } from "../components";
 import Image from "next/image";
+import Link from "next/link";
 
-function invoiceList() {
+function invoiceList({ invoices }) {
     let currencyFormat = new Intl.NumberFormat("en-GB", {
         style: "currency",
         currency: "GBP",
@@ -29,7 +29,11 @@ function invoiceList() {
                         <InvoiceItem.Text>{invoice.clientName}</InvoiceItem.Text>
                         <InvoiceItem.Total>{currencyFormat.format(invoice.total)}</InvoiceItem.Total>
                         <InvoiceItem.Status status={invoice.status}>&#9679; {invoice.status}</InvoiceItem.Status>
-                        <Image src="/assets/icon-arrow-right.svg" alt="arrow-right" width={10} height={10} />
+                        <Link href={`/${invoice.id}`}>
+                            <a>
+                                <Image src="/assets/icon-arrow-right.svg" alt="arrow-right" width={10} height={10} />{" "}
+                            </a>
+                        </Link>
                     </InvoiceItem>
                 );
             })}

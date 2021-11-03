@@ -2,8 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import { InvoiceList, SideNav } from "../containers";
 import { Invoices } from "../components";
+import data from "../data.json";
 
-export default function Home() {
+export default function Home({ invoices }) {
     return (
         <Invoices>
             <SideNav />
@@ -22,8 +23,16 @@ export default function Home() {
                 </div>
             </Invoices.Wrapper>
             <Invoices.ListWrap>
-                <InvoiceList />
+                <InvoiceList invoices={invoices} />
             </Invoices.ListWrap>
         </Invoices>
     );
+}
+
+export async function getStaticProps() {
+    return {
+        props: {
+            invoices: data,
+        },
+    };
 }
