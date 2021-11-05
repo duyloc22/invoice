@@ -1,14 +1,13 @@
 import React from "react";
-import detailContainer from "../containers/detailContainer";
+import { DetailContainer, SideNav } from "../containers";
 import invoices from "../data.json";
 
 function invoice({ invoice }) {
-    console.log(invoice);
     return (
-        <div>
-            {/* <detailContainer /> */}
-            <h2>hello</h2>
-        </div>
+        <>
+            <DetailContainer invoice={invoice} />
+            <SideNav />
+        </>
     );
 }
 
