@@ -1,8 +1,13 @@
 import React from "react";
-import { Detail } from "../components";
+import { Detail, Calculate, Invoices } from "../components";
 import Image from "next/image";
 
 function detailContainer({ invoice }) {
+    let currencyFormat = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+    });
+
     return (
         <Detail>
             {/* <Detail.Wrapper>
@@ -49,6 +54,36 @@ function detailContainer({ invoice }) {
                     </Detail.ClientInfo>
                 </Detail.SpaceBetween>
             </div>
+            <Calculate>
+                <Calculate.Wrapper>
+                    <Calculate.ItemWrap>
+                        <Calculate.Title>Item Name</Calculate.Title>
+                        <Calculate.ItemDetailWrap>
+                            <Calculate.Title>QTY.</Calculate.Title>
+                            <Calculate.Title>Price</Calculate.Title>
+                            <Calculate.Title>Total</Calculate.Title>
+                        </Calculate.ItemDetailWrap>
+                    </Calculate.ItemWrap>
+                    <>
+                        {invoice.items.map((item) => {
+                            return (
+                                <Calculate.ItemWrap key={item.name}>
+                                    <Calculate.BlackText>{item.name}</Calculate.BlackText>
+                                    <Calculate.ItemDetailWrap>
+                                        <Calculate.GreyText>{item.quantity}</Calculate.GreyText>
+                                        <Calculate.GreyText>{currencyFormat.format(item.price).replace(/^(\D+)/, "$1 ")}</Calculate.GreyText>
+                                        <Calculate.BlackText>{currencyFormat.format(item.total).replace(/^(\D+)/, "$1 ")}</Calculate.BlackText>
+                                    </Calculate.ItemDetailWrap>
+                                </Calculate.ItemWrap>
+                            );
+                        })}
+                    </>
+                </Calculate.Wrapper>
+                <Calculate.AmountWrap>
+                    <Calculate.Title amount>Amount Due</Calculate.Title>
+                    <Calculate.AmountDue>{currencyFormat.format(invoice.total).replace(/^(\D+)/, "$1 ")}</Calculate.AmountDue>
+                </Calculate.AmountWrap>
+            </Calculate>
         </Detail>
     );
 }
