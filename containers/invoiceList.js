@@ -1,5 +1,5 @@
 import React from "react";
-import { InvoiceItem, SideNav } from "../components";
+import { InvoiceItem } from "../components";
 import Image from "next/image";
 import Link from "next/link";
 

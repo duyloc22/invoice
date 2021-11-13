@@ -1,4 +1,18 @@
-import { Container, Inner, Wrapper, Title, SmallTitle, Text, SmallText, AddressFrom, SpaceBetween, ClientInfo } from "./styles/detail";
+import {
+    Container,
+    Inner,
+    Wrapper,
+    Title,
+    SmallTitle,
+    Text,
+    SmallText,
+    AddressFrom,
+    SpaceBetween,
+    ClientInfo,
+    Button,
+    GoBackWrap,
+    GoBackText,
+} from "./styles/detail";
 
 export default function Detail({ children, ...rest }) {
     return (
@@ -31,4 +45,13 @@ Detail.SpaceBetween = function DetailSpaceBetween({ children, ...rest }) {
 };
 Detail.ClientInfo = function DetailClientInfo({ children, ...rest }) {
     return <ClientInfo {...rest}>{children}</ClientInfo>;
+};
+Detail.Button = function DetailButton({ children, ...rest }) {
+    return <Button {...rest}>{children}</Button>;
+};
+Detail.GoBackWrap = function DetailGoBackWrap({ children, ...rest }) {
+    return <GoBackWrap {...rest}>{children}</GoBackWrap>;
+};
+Detail.GoBackText = function DetailGoBackText({ children, ...rest }) {
+    return <GoBackText {...rest}>{children}</GoBackText>;
 };

@@ -29,20 +29,15 @@ export const Total = styled(Id)`
 export const Status = styled.p`
     font-size: 12px;
     width: 104px;
-    background-color: rgba(51, 214, 159, 0.1);
-    color: rgba(51, 214, 159, 1);
+    background-color: ${({ status }) =>
+        status == "pending" ? "rgba(255, 143, 0, 0.1)" : status == "draft" ? "rgba(55, 59, 83, 0.1)" : " rgba(51, 214, 159, 0.1)"};
+    color: ${({ status }) => (status == "pending" ? "rgba(255, 143, 0, 1)" : status == "draft" ? "rgba(55, 59, 83, 1)" : " rgba(51, 214, 159, 1)")};
     padding: 1em 1.5em;
     font-weight: bold;
     text-transform: capitalize;
     text-align: center;
     border-radius: 6px;
-
-    ${({ status }) =>
-        status == "pending"
-            ? "background-color: rgba(255, 143, 0, 0.1);color: rgba(255, 143, 0, 1)"
-            : status == "draft"
-            ? "background-color: rgba(55, 59, 83, 0.1);color: rgba(55, 59, 83, 1)"
-            : null};
+    margin-left: 2em;
 `;
 export const StyleArrow = styled(Image)``;
 export const SVGWrap = styled.div`

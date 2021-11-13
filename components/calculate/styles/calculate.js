@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     margin-top: 2em;
-    background-color: #f9fafe;
-    border-radius: 8px 8px 0 0;
 `;
 export const Wrapper = styled.div`
+    border-radius: 8px 8px 0 0;
     padding: 2em;
+    background-color: #f9fafe;
 `;
 export const ItemWrap = styled.div`
     display: flex;
